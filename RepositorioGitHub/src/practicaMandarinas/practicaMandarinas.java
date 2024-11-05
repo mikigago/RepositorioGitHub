@@ -3,7 +3,7 @@ package practicaMandarinas;
 import java.util.*;
 
 public class practicaMandarinas {
-
+//actualizado
 	public static void main(String[] args) {
 
 		double cantidad_satsumas = 0;
@@ -37,11 +37,11 @@ public class practicaMandarinas {
 		String entradaSalidaMandarinas;
 		char usuarioContinua = ' ';
 
-		boolean continuar = false;
+		boolean continuar = true;
 
-		while (!continuar) {
+		Scanner entrada = new Scanner(System.in);
 
-			Scanner entrada = new Scanner(System.in);
+		while (continuar) {
 
 			System.out.println("------------MENU-----------");
 			System.out.println("1. Mandarina Satsumma");
@@ -103,26 +103,6 @@ public class practicaMandarinas {
 					} // catch
 
 				} // salida if
-				while (!continuar) {
-					try {
-						System.out.println("¿ Deseas continuar ? (S/N)");
-						usuarioContinua = entrada.next().charAt(0);
-
-						if (usuarioContinua == 'S' || usuarioContinua == 's') {
-							continuar = false;
-						} else if ((usuarioContinua == 'N' || usuarioContinua == 'n')) {
-
-							continuar = true;
-						} else if (usuarioContinua != 'N' || usuarioContinua != 'n' && usuarioContinua != 'S'
-								|| usuarioContinua != 's') {
-							System.out.println("Introduce S o N porfavor, no otro caracter");
-						}
-					} catch (InputMismatchException charErroneo) {
-						System.out.println("Introduce S o N porfavor, no un numero");
-						entrada.next();
-					} // catch
-
-				} // while
 				break;
 
 			case 2:
@@ -176,26 +156,6 @@ public class practicaMandarinas {
 					} // catch
 
 				} // salida if
-				while (!continuar) {
-					try {
-						System.out.println("¿ Deseas continuar ? (S/N)");
-						usuarioContinua = entrada.next().charAt(0);
-
-						if (usuarioContinua == 'S' || usuarioContinua == 's') {
-							continuar = false;
-						} else if ((usuarioContinua == 'N' || usuarioContinua == 'n')) {
-
-							continuar = true;
-						} else if (usuarioContinua != 'N' || usuarioContinua != 'n' && usuarioContinua != 'S'
-								|| usuarioContinua != 's') {
-							System.out.println("Introduce S o N porfavor, no otro caracter");
-						}
-					} catch (InputMismatchException charErroneo) {
-						System.out.println("Introduce S o N porfavor, no un numero");
-						entrada.next();
-					} // catch
-
-				} // while
 				break;
 
 			case 3:
@@ -249,37 +209,32 @@ public class practicaMandarinas {
 					} // catch
 
 				} // salida if
-				while (!continuar) {
-					try {
-						System.out.println("¿ Deseas continuar ? (S/N)");
-						usuarioContinua = entrada.next().charAt(0);
-
-						if (usuarioContinua == 'S' || usuarioContinua == 's') {
-							continuar = false;
-						} else if ((usuarioContinua == 'N' || usuarioContinua == 'n')) {
-
-							continuar = true;
-						} else if (usuarioContinua != 'N' || usuarioContinua != 'n' && usuarioContinua != 'S'
-								|| usuarioContinua != 's') {
-							System.out.println("Introduce S o N porfavor, no otro caracter");
-						}
-					} catch (InputMismatchException charErroneo) {
-						System.out.println("Introduce S o N porfavor, no un numero");
-						entrada.next();
-					} // catch
-
-				} // while
 				break;
 
 			case 4:
-				continuar = true;
+				continuar = false;
 				break;
 
 			default:
 				System.out.println("ERROR 404");
-
+				break;
 			}
 
+			if (continuar) {
+				try {
+					System.out.println("¿ Deseas continuar ? (S/N)");
+					usuarioContinua = entrada.next().charAt(0);
+
+					if (usuarioContinua == 'N' || usuarioContinua == 'n') {
+						continuar = false;
+					} else if (usuarioContinua != 'S' && usuarioContinua != 's') {
+						System.out.println("Introduce S o N por favor, no otro caracter");
+					}
+				} catch (InputMismatchException charErroneo) {
+					System.out.println("Introduce S o N por favor, no un numero");
+					entrada.next();
+				} // catch
+			}
 		} // while
 
 		System.out.println("----------------------Stock---------------------");
