@@ -2,8 +2,8 @@ package practicaMandarinas;
 
 import java.util.*;
 
-public class practicaMandarinas {
-//actualizado
+public class PracticaMandarinas {
+
 	public static void main(String[] args) {
 
 		double cantidad_satsumas = 0;
