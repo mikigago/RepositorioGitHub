@@ -31,7 +31,7 @@ public class PracticaGolf {
                     entradaValida = true;
                 } catch (InputMismatchException errorLetra) {
                     System.out.println("Introduce un número por favor");
-                    entrada.next(); // Limpiar la entrada incorrecta
+                    entrada.next();
                 }
             }
 
