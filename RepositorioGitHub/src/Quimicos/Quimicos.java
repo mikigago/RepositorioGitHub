@@ -4,83 +4,83 @@ import java.util.*;
 
 public class Quimicos {
 
-	public static void main(String[] args) {
+    public static void main(String[] args) {
 
-		Scanner entrada = new Scanner(System.in);
-		
+        Scanner entrada = new Scanner(System.in);
 
-		double capacidadCuba, nitrogenoNecesario, FosforoNecesario, potasioNecesario ;
-		double fosforoStock = 0, nitrogenoStock = 0, potasioStock = 0, cantidadRecibida = 0;
-		
-		int seleccion;
-		
-		boolean continuar = true;
-		
-		System.out.println("Introduce la capacidad de la cuba");
-		capacidadCuba = entrada.nextDouble();
+        double capacidadCuba, nitrogenoNecesario, FosforoNecesario, potasioNecesario;
+        double fosforoStock = 0, nitrogenoStock = 0, potasioStock = 0, cantidadRecibida = 0;
 
-		nitrogenoNecesario = capacidadCuba * 0.45;
-		FosforoNecesario = capacidadCuba * 0.25;
-		potasioNecesario = capacidadCuba * 0.3;
+        int seleccion;
 
-		do {
+        boolean continuar = true;
 
-			System.out.println("FABRICA DE FERTILIZANTES");
-			System.out.println("1. Entrada Nitrato Fosforico ");
-			System.out.println("2. Entrada Urea ");
-			System.out.println("3. Entrada Nitrato Potasico ");
-			System.out.println("4. Entrada Potasio nitrico fosforico ");
-			System.out.println("5. Salir ");
-			seleccion = entrada.nextInt();
+        System.out.println("Introduce la capacidad de la cuba");
+        capacidadCuba = entrada.nextDouble();
 
-			if (seleccion != 5) {
-				System.out.println("¿Cantidad recibida?");
-				cantidadRecibida = entrada.nextDouble();
-			}
+        nitrogenoNecesario = capacidadCuba * 0.45;
+        FosforoNecesario = capacidadCuba * 0.25;
+        potasioNecesario = capacidadCuba * 0.3;
 
-			switch (seleccion) {
+        try {
+            do {
 
-			case 1:
-				nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.10;
-				fosforoStock = fosforoStock + cantidadRecibida * 0.25;
+                System.out.println("FABRICA DE FERTILIZANTES");
+                System.out.println("1. Entrada Nitrato Fosforico ");
+                System.out.println("2. Entrada Urea ");
+                System.out.println("3. Entrada Nitrato Potasico ");
+                System.out.println("4. Entrada Potasio nitrico fosforico ");
+                System.out.println("5. Salir ");
+                seleccion = entrada.nextInt();
 
-				break;
+                if (seleccion != 5) {
+                    System.out.println("¿Cantidad recibida?");
+                    cantidadRecibida = entrada.nextDouble();
+                }
 
-			case 2:
-				nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.20;
-				potasioStock = potasioStock + cantidadRecibida * 0.15;
-				break;
+                switch (seleccion) {
 
-			case 3:
+                    case 1:
+                        nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.10;
+                        fosforoStock = fosforoStock + cantidadRecibida * 0.25;
+                        break;
 
-				nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.40;
-				potasioStock = potasioStock + cantidadRecibida * 0.10;
-				break;
+                    case 2:
+                        nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.20;
+                        potasioStock = potasioStock + cantidadRecibida * 0.15;
+                        break;
 
-			case 4:
-				nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.11;
-				fosforoStock = fosforoStock + cantidadRecibida * 0.30;
-				fosforoStock = fosforoStock + cantidadRecibida * 0.15;
-				break;
+                    case 3:
+                        nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.40;
+                        potasioStock = potasioStock + cantidadRecibida * 0.10;
+                        break;
 
-			case 5:
-				continuar = false;
-				break;
+                    case 4:
+                        nitrogenoStock = nitrogenoStock + cantidadRecibida * 0.11;
+                        fosforoStock = fosforoStock + cantidadRecibida * 0.30;
+                        potasioStock = potasioStock + cantidadRecibida * 0.15;
+                        break;
 
-			}// switch
+                    case 5:
+                        continuar = false;
+                        break;
 
-		} while (continuar);
+                }// switch
 
-		if (nitrogenoStock >= nitrogenoNecesario && fosforoStock >= FosforoNecesario
-				&& potasioStock >= potasioNecesario) {
-			System.out.println("Podemos iniciar el proceso de creacion del fertilizante");
-			continuar = false;
-		} else {
-			System.out.println("Finalizado el programa sin iniciar creacion");
-		}
-		
-		entrada.close();
+                if (nitrogenoStock >= nitrogenoNecesario && fosforoStock >= FosforoNecesario
+                        && potasioStock >= potasioNecesario) {
+                    System.out.println("Podemos iniciar el proceso de creacion del fertilizante");
+                    continuar = false;
+                } else {
+                    System.out.println("Finalizado el programa sin iniciar creacion");
+                    System.out.println("Stock actual - Nitrógeno: " + nitrogenoStock + ", Fósforo: " + fosforoStock + ", Potasio: " + potasioStock);
+                }
 
-	}// main
+            } while (continuar);
+        } finally {
+            entrada.close();
+        }
+
+    }// main
 
 }// class
