@@ -7,7 +7,7 @@ public class Quimicos {
 	public static void main(String[] args) {
 
 		Scanner entrada = new Scanner(System.in);
-		Scanner entradaChar = new Scanner(System.in);
+		
 
 		double capacidadCuba, nitrogenoNecesario, FosforoNecesario, potasioNecesario ;
 		double fosforoStock = 0, nitrogenoStock = 0, potasioStock = 0, cantidadRecibida = 0;
@@ -78,6 +78,8 @@ public class Quimicos {
 		} else {
 			System.out.println("Finalizado el programa sin iniciar creacion");
 		}
+		
+		entrada.close();
 
 	}// main
 
