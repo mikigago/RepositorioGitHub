@@ -208,6 +208,8 @@ public class ConcursoCanino {
 		}
 		System.out.println();
 		System.out.println("El perro ganador es: " + dog);
+		
+		entrada.close();
 
 	}// class
 
