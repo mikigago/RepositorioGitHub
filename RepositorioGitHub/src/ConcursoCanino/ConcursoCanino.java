@@ -54,12 +54,12 @@ public class ConcursoCanino {
 				break;
 
 			case 2:
-				dog = "Corasario";
+				dog = "Gala";
 
 				break;
 
 			case 3:
-				dog = "Pluto";
+				dog = "Mauro";
 
 				break;
 
@@ -153,12 +153,12 @@ public class ConcursoCanino {
 				break;
 
 			case 2:
-				dog = "Corasario";
+				dog = "Gala";
 
 				break;
 
 			case 3:
-				dog = "Pluto";
+				dog = "Mauro";
 
 				break;
 
@@ -191,19 +191,16 @@ public class ConcursoCanino {
 			break;
 
 		case 2:
-			dog = "Corasario";
+			dog = "Gala";
 
 			break;
 
 		case 3:
-			dog = "Pluto";
-
-			break;
-
-		case 4:
 			dog = "Mauro";
 
 			break;
+
+		
 
 		}
 		System.out.println();
