@@ -105,6 +105,9 @@ public class SorteoBombo {
 		for (int i = 0; i < numElementos; i++) {
 			System.out.println("Estos son los numeros que han salido " + i + "º " + bombo[i]);
 		}
+		
+		
+		
 
 	}// listarNumeros
 
