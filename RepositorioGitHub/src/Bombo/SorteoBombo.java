@@ -1,6 +1,7 @@
 package Bombo;
 
 import java.util.Random;
+import lombok.Getter;
 import java.util.Scanner;
 
 public class SorteoBombo {

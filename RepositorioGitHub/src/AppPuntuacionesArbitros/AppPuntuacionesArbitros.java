@@ -117,10 +117,13 @@ class Arbitro {
 
 	public double promedioTemporada() {
 		double suma = 0;
+		
 		for (Puntuacion p : puntuaciones) {
 		
 		}
 		return suma / puntuaciones.length;
+		
+		
 	} // promedioTemporada
 	
          
@@ -128,6 +131,7 @@ class Arbitro {
 }
 
 public class AppPuntuacionesArbitros {
+	
 	static Arbitro[] arbitros = new Arbitro[10];
 	static int contadorArbitros = 0;
 	static Scanner scanner = new Scanner(System.in);
